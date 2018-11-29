@@ -3,11 +3,12 @@ import { json, urlencoded } from 'body-parser'
 import morgan from 'morgan'
 import config from './config'
 import cors from 'cors'
-import restApi from './routes'
-import { signup, signin } from './auth'
+import rest from './rest/routes'
+import { signup, signin, protect } from './auth'
 import { connect } from './db'
 
-export const app = express()
+const app = express()
+app.disable('x-powered-by')
 
 app.use(cors())
 app.use(json())
@@ -16,11 +17,9 @@ app.use(morgan('dev'))
 
 app.post('/signup', signup)
 app.post('/signin', signin)
-app.use('/api', restApi)
+app.use('/api', protect, rest)
 
-app.get('/', (req, res) => res.send('hello'))
-
-export const start = async () => {
+const start = async () => {
   try {
     await connect()
     app.listen(config.port, () => {
@@ -30,3 +29,5 @@ export const start = async () => {
     console.error(e)
   }
 }
+
+export { app, start }

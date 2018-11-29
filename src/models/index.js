@@ -1,2 +1,3 @@
 export { User } from './user'
-export { Task } from './task'
+export { Coupon } from './coupon'
+export { Product } from './product'

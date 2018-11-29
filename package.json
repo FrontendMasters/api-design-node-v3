@@ -25,7 +25,8 @@
     "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "mongoose": "^5.3.13",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "validator": "^10.9.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -47,9 +48,11 @@
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.3",
     "prettier": "^1.15.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "supertest": "^3.3.0"
   },
   "jest": {
     "verbose": true,

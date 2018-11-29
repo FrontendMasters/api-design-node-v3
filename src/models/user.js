@@ -1,33 +1,22 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
-const userSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true
-  },
 
-  password: {
-    type: String,
-    required: true
-  },
-
-  settings: {
-    firstDayOfWeek: {
-      type: String,
-      enum: ['monday', 'sunday'],
-      default: 'monday',
-      required: true
-    },
-    theme: {
+const userSchema = new mongoose.Schema(
+  {
+    email: {
       type: String,
       required: true,
-      enum: ['light', 'dark'],
-      default: 'dark'
+      unique: true,
+      trim: true
+    },
+
+    password: {
+      type: String,
+      required: true
     }
-  }
-})
+  },
+  { timestamps: true }
+)
 
 userSchema.pre('save', function(next) {
   if (!this.isModified('password')) {
@@ -45,10 +34,9 @@ userSchema.pre('save', function(next) {
 })
 
 userSchema.methods.checkPassword = function(password) {
-  const hash = this.password
+  const passwordHash = this.password
   return new Promise((resolve, reject) => {
-    console.log(this, hash, password)
-    bcrypt.compare(password, hash, (err, same) => {
+    bcrypt.compare(password, passwordHash, (err, same) => {
       if (err) {
         return reject(err)
       }

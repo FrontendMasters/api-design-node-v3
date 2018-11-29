@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import cuid from 'cuid'
-import models from './src/models'
+import * as models from './src/models'
 import _ from 'lodash'
 
 const url =
@@ -39,6 +39,7 @@ beforeEach(async done => {
       await Promise.all(Object.keys(models).map(name => models[name].init()))
     } catch (e) {
       console.log('connection error')
+      console.error(e)
       throw e
     }
   } else {
