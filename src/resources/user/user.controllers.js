@@ -1,7 +1,7 @@
-import { User } from '../../models'
+import { User } from './user.model'
 
-export const getMe = (req, res) => {
-  res.status(200).send({ data: req.user })
+export const me = (req, res) => {
+  res.status(200).json({ data: req.user })
 }
 
 export const updateMe = async (req, res) => {
@@ -18,5 +18,3 @@ export const updateMe = async (req, res) => {
     res.status(400).end()
   }
 }
-
-export default { getMe, updateMe }

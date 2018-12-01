@@ -13,6 +13,23 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true
+    },
+    settings: {
+      theme: {
+        type: String,
+        required: true,
+        default: 'dark'
+      },
+      notifications: {
+        type: Boolean,
+        required: true,
+        default: true
+      },
+      compactMode: {
+        type: Boolean,
+        required: true,
+        default: false
+      }
     }
   },
   { timestamps: true }

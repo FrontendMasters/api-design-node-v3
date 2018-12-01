@@ -6,22 +6,18 @@
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "test": "NODE_ENV=testing jest --forceExit --detectOpenHandles --verbose false",
+    "test": "NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
     "dev": "nodemon --exec yarn restart",
     "restart": "rimraf dist && yarn build && yarn start",
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "apollo-server": "^2.2.2",
-    "apollo-server-express": "^2.2.2",
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "cuid": "^2.1.4",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "graphql": "^14.0.2",
-    "graphql-tools": "^4.0.3",
     "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "mongoose": "^5.3.13",

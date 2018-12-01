@@ -1,10 +1,10 @@
 import request from 'supertest'
-import { app } from '../../server'
-import { User } from '../../models'
-import { newToken } from '../auth'
+import { app } from '../server'
+import { User } from '../resources/user/user.model'
+import { newToken } from '../utils/auth'
 import mongoose from 'mongoose'
 
-describe('rest routes', () => {
+describe('server', () => {
   let token
   beforeEach(async () => {
     const user = await User.create({ email: 'a@a.com', password: 'hello' })
@@ -13,34 +13,38 @@ describe('rest routes', () => {
 
   describe('api auth', () => {
     test('api should be locked down', async () => {
-      const response = await request(app).get('/api/task')
+      let response = await request(app).get('/api/item')
+      expect(response.statusCode).toBe(401)
+
+      response = await request(app).get('/api/list')
+      expect(response.statusCode).toBe(401)
+
+      response = await request(app).get('/api/user')
       expect(response.statusCode).toBe(401)
     })
 
     test('passes with JWT', async () => {
-      const jwt = `Bearer: ${token}`
+      const jwt = `Bearer ${token}`
       const id = mongoose.Types.ObjectId()
       const results = await Promise.all([
         request(app)
-          .get('/api/task')
+          .get('/api/item')
           .set('Authorization', jwt),
         request(app)
-          .get(`/api/task/${id}`)
+          .get(`/api/item/${id}`)
           .set('Authorization', jwt),
         request(app)
-          .post('/api/task')
+          .post('/api/item')
           .set('Authorization', jwt),
         request(app)
-          .put(`/api/task/${id}`)
+          .put(`/api/item/${id}`)
           .set('Authorization', jwt),
         request(app)
-          .delete(`/api/task/${id}`)
+          .delete(`/api/item/${id}`)
           .set('Authorization', jwt)
       ])
 
-      results.forEach(res => expect(res.statusCode).not.toBe(404))
+      results.forEach(res => expect(res.statusCode).not.toBe(401))
     })
   })
-
-  // test('crud routes for list', async () => {})
 })
