@@ -16,7 +16,7 @@ export const verifyToken = token =>
     })
   })
 
-export const signup = async (req, res, next) => {
+export const signup = async (req, res) => {
   if (!req.body.email || !req.body.password) {
     return res.status(400).send({ message: 'need email and password' })
   }
@@ -30,9 +30,9 @@ export const signup = async (req, res, next) => {
   }
 }
 
-export const signin = async (req, res, next) => {
+export const signin = async (req, res) => {
   if (!req.body.email || !req.body.password) {
-    return res.status(401).send({ message: 'need email and password' })
+    return res.status(400).send({ message: 'need email and password' })
   }
 
   const invalid = { message: 'Invalid email and passoword combination' }
@@ -49,7 +49,7 @@ export const signin = async (req, res, next) => {
     const match = await user.checkPassword(req.body.password)
 
     if (!match) {
-      return res.status(400).send(invalid)
+      return res.status(401).send(invalid)
     }
 
     const token = newToken(user)
