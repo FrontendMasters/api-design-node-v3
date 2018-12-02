@@ -14,6 +14,15 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
+app.get('/data', (req, res) => {
+  res.json({ message: 'hello' })
+})
+
+app.post('/data', (req, res) => {
+  console.log(req.body)
+  res.status(200).end()
+})
+
 export const start = async () => {
   try {
     await connect()
