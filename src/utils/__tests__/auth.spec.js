@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 import config from '../../config'
 import { User } from '../../resources/user/user.model'
 
-describe('auth', () => {
+describe('Authentication:', () => {
   describe('newToken', () => {
     test('creates new jwt from user', () => {
       const id = 123
