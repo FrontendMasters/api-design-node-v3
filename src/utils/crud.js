@@ -47,7 +47,7 @@ export const updateOne = model => async (req, res) => {
       .findOneAndUpdate(
         {
           createdBy: req.user._id,
-          id: req.params.id
+          _id: req.params.id
         },
         req.body,
         { new: true }
@@ -70,7 +70,7 @@ export const removeOne = model => async (req, res) => {
   try {
     const removed = await model.findOneAndRemove({
       createdBy: req.user._id,
-      id: req.params.id
+      _id: req.params.id
     })
 
     if (!removed) {
