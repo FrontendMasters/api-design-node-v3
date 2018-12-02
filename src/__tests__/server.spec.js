@@ -4,7 +4,7 @@ import { User } from '../resources/user/user.model'
 import { newToken } from '../utils/auth'
 import mongoose from 'mongoose'
 
-describe('server', () => {
+describe('API Authentication:', () => {
   let token
   beforeEach(async () => {
     const user = await User.create({ email: 'a@a.com', password: 'hello' })
