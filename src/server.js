@@ -3,7 +3,6 @@ import { json, urlencoded } from 'body-parser'
 import morgan from 'morgan'
 import config from './config'
 import cors from 'cors'
-import { signup, signin, protect } from './utils/auth'
 import { connect } from './utils/db'
 
 export const app = express()
@@ -14,9 +13,6 @@ app.use(cors())
 app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
-
-app.post('/signup', signup)
-app.post('/signin', signin)
 
 export const start = async () => {
   try {
