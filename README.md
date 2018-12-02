@@ -41,7 +41,7 @@ This exercise will have you creating routes and sub routers for our soon the be 
 
 ### Create Schemas
 * branch - `lesson-3`
-* test command - `yarn test-model` or `npm run test-model`
+* test command - `yarn test-models` or `npm run test-models`
 
 In this exercise, you'll be taking what you learned about Mongoose and MongoDb to create a schema and model for the Item resource.
 
