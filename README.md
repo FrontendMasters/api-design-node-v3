@@ -63,7 +63,7 @@ So far we have routes and models. Now we need to hook our routes up to our model
 
 ### Authentication
 * branch - `lesson-5`
-* test command - `yarn test-controllers` or `npm run test-controllers`
+* test command - `yarn test-auth` or `npm run test-auth`
 
 In this exercise you'll be locking down our API using JWT's.
 
