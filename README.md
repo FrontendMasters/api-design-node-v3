@@ -3,7 +3,7 @@
 
 - [Resources](#resources)
 - [Course](#course)
-- [Excercises](#excercises)
+- [Exercises](#excercises)
   - [Hello world Express](#hello-world-express)
   - [Routing](#routing)
   - [Create Schemas](#create-schemas)
@@ -12,14 +12,14 @@
   - [Testing](#testing)
 
 ## Resources
-* [Slides](https://slides.com/scotups/api-design-in-node-with-express-v3/fullscreen)
+* [Slides](https://slides.com/scotups/api-design-in-node-with-express-v3)
 * [Nodejs](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
 * [MongoDB](https://www.mongodb.com/)
 
 ## Course
 This course has two parts, slides and excercises. The slides describe the excerices in detail. Each excercise has a starting branch and solution branch. Example `lesson-1` and `lesson-1-solution`.
-## Excercises
+## Exercises
 ### Hello world Express
 * branch - `lesson-1`
 
