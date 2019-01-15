@@ -12,7 +12,7 @@
   - [Testing](#testing)
 
 ## Resources
-* [Slides](https://slides.com/scotups/api-design-in-node-with-express-v3)
+* [Slides](https://slides.com/scotups/api-design-in-node-with-express-v3/)
 * [Nodejs](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
 * [MongoDB](https://www.mongodb.com/)
