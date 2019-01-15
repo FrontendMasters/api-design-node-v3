@@ -3,7 +3,7 @@
 
 - [Resources](#resources)
 - [Course](#course)
-- [Excercises](#excercises)
+- [Exercises](#excercises)
   - [Hello world Express](#hello-world-express)
   - [Routing](#routing)
   - [Create Schemas](#create-schemas)
@@ -19,7 +19,7 @@
 
 ## Course
 This course has two parts, slides and excercises. The slides describe the excerices in detail. Each excercise has a starting branch and solution branch. Example `lesson-1` and `lesson-1-solution`.
-## Excercises
+## Exercises
 ### Hello world Express
 * branch - `lesson-1`
 
