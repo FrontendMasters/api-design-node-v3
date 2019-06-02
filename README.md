@@ -18,7 +18,7 @@
 * [MongoDB](https://www.mongodb.com/)
 
 ## Course
-This course has two parts, slides and excercises. The slides describe the excerices in detail. Each excercise has a starting branch and solution branch. Example `lesson-1` and `lesson-1-solution`.
+This course has two parts, slides and exercises. The slides describe the exercices in detail. Each exercise has a starting branch and solution branch. Example `lesson-1` and `lesson-1-solution`.
 ## Exercises
 ### Hello world Express
 * branch - `lesson-1`
