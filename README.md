@@ -73,4 +73,4 @@ In this exercise you'll be locking down our API using JWT's.
 - [ ] ensure all tests pass by running test command
 
 ### Testing
-THe other resources don't have any test, go ahead and write some!
+The other resources don't have any test, go ahead and write some!
