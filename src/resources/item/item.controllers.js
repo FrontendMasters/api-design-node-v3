@@ -1,6 +1,4 @@
-import {
-  Item
-} from './item.model'
+import { Item } from './item.model'
 // export default {}
 
 export const getItem = (req, res) => {
@@ -8,11 +6,13 @@ export const getItem = (req, res) => {
     data: req.item
   })
 }
+
 export const createItem = (req, res) => {
   res.status(200).json({
     data: req.item
   })
 }
+
 export const updateItem = async (req, res) => {
   try {
     const item = await Item.findByIdAndUpdate(req.item._id, req.body, {
@@ -29,6 +29,7 @@ export const updateItem = async (req, res) => {
     res.status(400).end()
   }
 }
+
 export const deleteItem = async (req, res) => {
   try {
     const item = await Item.findByIdAndUpdate(req.item._id, req.body, {
