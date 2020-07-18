@@ -12,6 +12,13 @@ const itemSchema = new mongoose.Schema({
         required: true,
         enum: ['active', 'complete', 'pastdue'],
         default: 'active'
+    },
+    notes: String,
+    due: Date,
+    createdBy: {
+        type: mongoose.SchemaTypes.ObjectId,
+        required: true,
+        ref: 'user'
     }
 }, { timestamps: true })
 export const Item = mongoose.model('item', itemSchema)
