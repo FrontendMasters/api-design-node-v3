@@ -19,6 +19,11 @@ const itemSchema = new mongoose.Schema({
         type: mongoose.SchemaTypes.ObjectId,
         required: true,
         ref: 'user'
+    },
+    list: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'list',
+        required: true
     }
 }, { timestamps: true })
 export const Item = mongoose.model('item', itemSchema)
