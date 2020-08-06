@@ -1,4 +1,4 @@
-# API design in Node.js with Express, v3
+# Course Code for [API design in Node.js with Express, v3](https://frontendmasters.com/courses/api-design-nodejs-v3/)
 > Scott Moss & Frontend Masters
 
 - [Resources](#resources)
