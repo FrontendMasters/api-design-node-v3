@@ -18,7 +18,7 @@ global.newId = () => {
 
 const remove = collection =>
   new Promise((resolve, reject) => {
-    collection.remove(err => {
+    collection.deleteMany(err => {
       if (err) return reject(err)
       resolve()
     })
@@ -36,7 +36,9 @@ beforeEach(async done => {
         url + db,
         {
           useNewUrlParser: true,
-          autoIndex: true
+          autoIndex: true,
+          useUnifiedTopology: true,
+          useCreateIndex: true,
         }
       )
       await clearDB()
