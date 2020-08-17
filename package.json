@@ -59,7 +59,9 @@
     "verbose": true,
     "testURL": "http://localhost/",
     "testEnvironment": "node",
-    "setupTestFrameworkScriptFile": "<rootDir>/test-db-setup.js",
+    "setupFilesAfterEnv": [
+      "<rootDir>/test-db-setup.js"
+    ],
     "testPathIgnorePatterns": [
       "dist/"
     ],
