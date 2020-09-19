@@ -23,8 +23,7 @@ const itemSchema = new mongoose.Schema(
     },
     list: {
       type: mongoose.SchemaTypes.ObjectId,
-      ref: 'list',
-      required: true
+      ref: 'list'
     }
   },
   { timestamps: true }
