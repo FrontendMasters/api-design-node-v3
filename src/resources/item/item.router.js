@@ -2,7 +2,7 @@ import { Router } from 'express'
 const router = Router()
 
 const mockController = (req, res) => {
-  res.json({ message: 'okay' })
+  res.json({ message: 'hello' })
 }
 // /api/item
 router
