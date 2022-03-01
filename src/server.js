@@ -31,3 +31,9 @@ export const start = async () => {
     console.error(e)
   }
 }
+
+// export const start = () => {
+//   app.listen(3000, () => {
+//     console.log('sever is on 3000')
+//   })
+// }
