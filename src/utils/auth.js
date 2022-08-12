@@ -46,6 +46,7 @@ export const signin = async (req, res) => {
       return res.status(401).send(invalid)
     }
 
+    // He created a checkPassword method on the User model.
     const match = await user.checkPassword(req.body.password)
 
     if (!match) {

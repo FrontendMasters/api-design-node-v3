@@ -21,7 +21,7 @@ app.use(morgan('dev'))
 app.post('/signup', signup)
 app.post('/signin', signin)
 
-app.use('/api', protect)
+app.use('/api', protect) // Adding the verification middleware to all api routes
 app.use('/api/user', userRouter)
 app.use('/api/item', itemRouter)
 app.use('/api/list', listRouter)
