@@ -1,0 +1,60 @@
+version: "3.7"
+services:
+  node_server:
+      container_name: api_design
+      hostname: api_design
+      build:
+        context: ./..
+        dockerfile: ./docker/dockerfile
+      volumes:
+        - ${DIR}:/usr/src/app
+        - /usr/src/app/node_modules
+      ports:
+        - ${SERVER_PORT}:${SERVER_PORT}
+      # command: npm run dev
+      command: sleep infinity
+      env_file:
+        - .env
+      networks:
+      - api-design-network
+      
+  mongo_express_db:
+    container_name: mongo_express_api
+    hostname: mongo_express_api
+    image: mongo-express
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_USER}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_USER_PASSWORD}
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_SERVER: mongo_db
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USER}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_USER_PASSWORD}
+    links:
+      - mongo_db
+    networks:
+      - api-design-network
+    env_file:
+        - .env
+
+  mongo_db:
+    container_name: mongo_api
+    hostname: mongo_api
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_USER_PASSWORD}
+    ports:
+      - "27017:27017"
+    volumes:
+      - ${DB_DIR}:/data/db
+    networks:
+      - api-design-network
+    env_file:
+        - .env
+
+networks: 
+    api-design-network:
+      driver: bridge
+
