@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repo is from an archived version of the course. Watch the latest version of the course on [frontendmasters.com](https://frontendmasters.com/courses/api-design-nodejs-v4/).
+
 # Course Code for [API design in Node.js with Express, v3](https://frontendmasters.com/courses/api-design-nodejs-v3/)
 > Scott Moss & Frontend Masters
 
